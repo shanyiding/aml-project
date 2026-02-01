@@ -1,0 +1,16 @@
+name: aml-project
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - scikit-learn
+  - xgboost
+  - lightgbm
+  - shap
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - tqdm
+  - jupyter
