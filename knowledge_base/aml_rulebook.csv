@@ -1,0 +1,53 @@
+rule_id,category,red_flag,typology,source,feasibility
+KYC-ID-01,KYC & Identity,Client provides information that is misleading,vague,hard to verify,low
+KYC-ID-02,KYC & Identity,"Common identifiers (addresses, phone numbers, IP) used by multiple apparently unrelated clients.",Network/CMLN,[1],Medium
+KYC-ID-03,KYC & Identity,"Client occupation (e.g., student, unemployed, homemaker) is inconsistent with transaction volume or wealth.",CMLN / Opioids / General,"[2], [3], [4]",Medium
+KYC-ID-04,KYC & Identity,Client presents Chinese passport/visa with identical photos allegedly issued years apart.,CMLN,[5],Low
+KYC-ID-05,KYC & Identity,Client displays nervous behavior,avoids contact,or is defensive when questioned.,Low
+KYC-ID-06,KYC & Identity,Sudden change in client's financial profile or pattern of activity.,General ML,"[2], [7]",High
+KYC-ID-07,KYC & Identity,Client opens accounts for several businesses for no apparent economic reason.,Opioids / General,[8],Medium
+KYC-ID-08,KYC & Identity,Accounts opened in the name of a foundation/association linked to suspected terrorist organizations.,Terrorist Financing,[9],Low
+TX-CASH-11,Transactions: Cash & ABM,High-volume cash deposits/withdrawals followed immediately by wire transfers or drafts (Pass-through activity).,General / Opioids,"[10], [8]",High
+TX-CASH-12,Transactions: Cash & ABM,Structuring cash deposits at multiple branches/ABMs to avoid reporting thresholds (Smurfing).,General / CMLN,"[11], [12]",High
+TX-CASH-13,Transactions: Cash & ABM,Cash activity occurs between 10 p.m. and 6 a.m.,Human Trafficking,[13],High
+TX-CASH-14,Transactions: Cash & ABM,"Frequent use of white-label ATMs (e.g., in hotels, convenience stores, casinos).",Human Trafficking,[14],Medium
+TX-CASH-15,Transactions: Cash & ABM,"Trucking/Logistics employees making excessive cash deposits, particularly along known drug corridors.",Opioids,[15],Medium
+TX-CASH-16,Transactions: Cash & ABM,Large volumes of cash delivered via Armored Car Services (ACS) for a business with no apparent lawful purpose.,Bulk Cash Smuggling,"[8], [16]",Medium
+TX-CASH-17,Transactions: Cash & ABM,Large volume of cash delivered to US financial institution via ACS on behalf of a Mexico-based business.,Bulk Cash Smuggling,[17],Low
+TX-CASH-18,Transactions: Cash & ABM,Shipment of bulk cash delivered via ACS without accompanying instructions.,Bulk Cash Smuggling,[18],Low
+TX-WIRE-21,Transactions: Wires/EFT,"Wire transfers to/from high-risk jurisdictions (e.g., China, Mexico, Colombia) without apparent business purpose.",Opioids / CMLN,"[19], [20]",Medium
+TX-WIRE-22,Transactions: Wires/EFT,"Wires sent to chemical companies or brokers in China (Hebei/Hubei provinces), Eastern Europe, or India.",Opioids (Production),"[21], [20]",Low
+TX-WIRE-23,Transactions: Wires/EFT,Large transfers between senders and receivers with no apparent relationship.,General / Human Trafficking,"[22], [23]",Medium
+TX-WIRE-24,Transactions: Wires/EFT,"Wires routed through intermediary jurisdictions (Hong Kong, South Korea, Singapore) to conceal final destination.",Opioids / CMLN,"[21], [24]",Low
+TX-WIRE-25,Transactions: Wires/EFT,"Client receives wires marked 'tuition' or 'living expenses' but funds are used for unrelated purposes (e.g., real estate, luxury goods).",CMLN,"[25], [5]",Low
+TX-WIRE-26,Transactions: Wires/EFT,Mexico-based business transporting cash into US provides inconsistent info on currency originator in CMIR.,Bulk Cash Smuggling,[18],Low
+TX-EMT-31,Transactions: EMT (Email Transfer),High volume of incoming EMTs rapidly depleted by outgoing EMTs to unrelated third parties.,Opioids / General,"[26], [8]",High
+TX-EMT-32,Transactions: EMT (Email Transfer),"EMTs containing references to drug slang (e.g., 'fent', 'china girl', 'dragon?s breath').",Opioids,[15],Low
+TX-EMT-33,Transactions: EMT (Email Transfer),"EMTs referencing 'escort', 'massage', or names of escort agencies.",Human Trafficking,[27],Low
+TX-EMT-34,Transactions: EMT (Email Transfer),Multiple EMTs from unrelated third parties sent to the same beneficiary.,Human Trafficking,"[28], [29]",High
+TX-CARD-41,Transactions: Cards/Cheques,Excessive credit card payments or overpayments followed by cash advances.,General / Human Trafficking,"[30], [31]",Medium
+TX-CARD-42,Transactions: Cards/Cheques,"Use of prepaid cards to do card-to-card transfers (e.g., male funding a female's card).",Human Trafficking,[32],Low
+TX-CARD-43,Transactions: Cards/Cheques,Use of bank drafts/cheques to purchase real estate or vehicles inconsistent with client profile.,Underground Banking,"[33], [34]",Low
+TX-CARD-44,Transactions: Cards/Cheques,Purchases at merchants selling gift cards/prepaid cards in rounded sums.,Human Trafficking,[35],Medium
+GEO-COR-51,Geographic/Corridors,"Transactions along known drug corridors (e.g., Vancouver -> Calgary -> Saskatchewan; Toronto -> London/Hamilton).",Opioids,[36],High
+GEO-COR-52,Geographic/Corridors,Funds transferred to/from jurisdictions with weak AML controls or known for drug production.,General / TF,"[19], [9]",Low
+GEO-COR-53,Geographic/Corridors,Hotel/accommodation bookings in multiple cities over a short period.,Human Trafficking,[37],Medium
+IND-RE-61,Industry Specific: Real Estate,Incoming funds from China/HK used for structured draft purchases to developers referencing specific units/addresses.,Underground Banking,[38],Low
+IND-RE-62,Industry Specific: Real Estate,Use of 'straw buyers' or nominees to purchase property.,CMLN,"[39], [40]",Low
+IND-RE-63,Industry Specific: Real Estate,US escrow company receives funds from unaffiliated foreign shell company to purchase real estate.,CMLN,[41],Low
+IND-AUTO-71,Industry Specific: Automotive,Funds from China/HK used to buy cars at high-end dealerships inconsistent with student/homemaker profile.,Underground Banking,[34],Low
+IND-AUTO-72,Industry Specific: Automotive,Circular flow of funds between used car dealerships and import/export entities.,Underground Banking,"[34], [3]",Medium
+IND-TRADE-81,Industry Specific: Trade/Import,Business accounts receiving wires for export of goods but never purchasing inventory (TBML).,CMLN / TBML,[42],Medium
+IND-TRADE-82,Industry Specific: Trade/Import,"Electronics/Luxury goods businesses receiving wires from unrelated jurisdictions (e.g., Mexico, UAE) with no business nexus.",CMLN / TBML,[42],Medium
+IND-TRADE-83,Industry Specific: Trade/Import,Hong Kong registered trading companies with shell-like characteristics sending funds with no economic purpose.,CMLN,[43],Low
+IND-LEGAL-91,Industry Specific: Legal,Funds sent to legal professionals (trust accounts) with no clear relationship or stated purpose.,Underground Banking,[44],Medium
+TX-NPM-101,New Payment Methods,Use of virtual currency (VC) to purchase precursor chemicals or pay chemical brokers.,Opioids,"[45], [20]",Low
+TX-NPM-102,New Payment Methods,Transfers to VC exchanges sourced from multiple incoming EMTs.,Human Trafficking,[46],Low
+TX-NPM-103,New Payment Methods,Interaction with VC addresses linked to darknet markets or mixing services.,Opioids / General,[47],Low
+BEH-LIFE-111,Lifestyle & Behavior,"Payments for escort ads, website hosting, or online marketing for sexual services.",Human Trafficking,[48],Medium
+BEH-LIFE-112,Lifestyle & Behavior,Purchases at online gambling sites using funds from multiple third-party EMTs.,Opioids / General,"[49], [46]",High
+BEH-LIFE-113,Lifestyle & Behavior,"Payments for luxury goods (jewelry, designer clothing) inconsistent with income.",Human Trafficking / CMLN,"[50], [43]",Medium
+BEH-LIFE-114,Lifestyle & Behavior,"Payments for industrial lab equipment (pill presses, pumps) without business need.",Opioids,[20],Low
+BEH-LIFE-115,Lifestyle & Behavior,Purchases of mailing/shipping materials not commensurate with business activity (micro-trafficking).,Opioids,[15],Medium
+TP-USE-121,Use of Third Parties,Client appears to be acting on behalf of another party (Nominee/Gatekeeper).,General ML,[51],Medium
+TP-USE-122,Use of Third Parties,Use of 'daigou' (shopping on behalf of others) to move funds or purchase luxury goods.,CMLN,"[39], [52]",Medium
