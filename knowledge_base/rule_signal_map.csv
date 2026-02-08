@@ -1,4 +1,4 @@
-
+rule_id,signal_id,entity,window,aggregation,columns_used,feasibility,description
 KYC-ID-07,multiple_business_accounts,customer,all,count,"customer_id; business_id",Medium,"Customer linked to multiple businesses without clear economic rationale"
 TX-CASH-11,cash_to_wire_pass_through,transaction,3d,ratio,"cash_indicator; channel; amount_cad; transaction_datetime",High,"Cash deposits rapidly exiting via wire transfers"
 TX-CASH-12,cash_structuring_pattern,transaction,30d,count,"amount_cad; transaction_datetime; branch_id",High,"Multiple sub-threshold cash deposits across locations (structuring)"
