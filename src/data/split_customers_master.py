@@ -123,9 +123,9 @@ def split_customers_master(
     out_dir: Path,
     transactions_path: Path | None = None,
     label_col: str = "label",
-    train_frac: float = 0.70,
-    val_frac: float = 0.15,
-    test_frac: float = 0.15,
+    train_frac: float = 0.60,
+    val_frac: float = 0.20,
+    test_frac: float = 0.20,
     seed: int = 42,
 ):
     if abs(train_frac + val_frac + test_frac - 1.0) > 1e-9:
