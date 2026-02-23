@@ -1,0 +1,146 @@
+{
+  "customer_id": "SYNID0103055630",
+  "score": 0.005254676,
+  "reasons": [
+    {
+      "feature": "intl_last",
+      "value": 0.0,
+      "impact": -0.948590874671936,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_sum",
+      "value": 11122.66,
+      "impact": -0.7764905095100403,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "intl_ratio_all",
+      "value": 0.0,
+      "impact": -0.7700954675674438,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_max",
+      "value": 2794.71,
+      "impact": -0.6562817096710205,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "channel_entropy",
+      "value": -0.0,
+      "impact": 0.5535235404968262,
+      "signal_ids": [
+        "cash_to_wire_pass_through",
+        "white_label_atm_usage",
+        "armored_car_cash_volume"
+      ],
+      "rules": [
+        {
+          "rule_id": "TX-CASH-11",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "High-volume cash deposits/withdrawals followed immediately by wire transfers or drafts (Pass-through activity).",
+          "typology": "General / Opioids",
+          "source": "[10], [8]",
+          "feasibility": "High",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-14",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Frequent use of white-label ATMs (e.g., in hotels, convenience stores, casinos).",
+          "typology": "Human Trafficking",
+          "source": "[14]",
+          "feasibility": "Medium",
+          "links": [
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-16",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Large volumes of cash delivered via Armored Car Services (ACS) for a business with no apparent lawful purpose.",
+          "typology": "Bulk Cash Smuggling",
+          "source": "[8], [16]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "income",
+      "value": 23610.0,
+      "impact": -0.4773452579975128,
+      "signal_ids": [
+        "txn_vs_occupation_peer"
+      ],
+      "rules": [
+        {
+          "rule_id": "KYC-ID-03",
+          "category": "KYC & Identity",
+          "red_flag": "Client occupation (e.g., student, unemployed, homemaker) is inconsistent with transaction volume or wealth.",
+          "typology": "CMLN / Opioids / General",
+          "source": "[2], [3], [4]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf",
+            "https://fintrac-canafe.canada.ca/intel/operation/iso-osi-eng"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "amt_cv_delta",
+      "value": -0.23906587708371707,
+      "impact": -0.45043882727622986,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_068",
+      "value": 0.01709197461605072,
+      "impact": -0.408303439617157,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_091",
+      "value": 0.05458887666463852,
+      "impact": -0.39738526940345764,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_011",
+      "value": 0.2052329182624817,
+      "impact": -0.3535228371620178,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "uniq_cities",
+      "value": 1.0,
+      "impact": 0.33817189931869507,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "night_ratio_all",
+      "value": 0.2608695652173913,
+      "impact": -0.3256443738937378,
+      "signal_ids": [],
+      "rules": []
+    }
+  ]
+}

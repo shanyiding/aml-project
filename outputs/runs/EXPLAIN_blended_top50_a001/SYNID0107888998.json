@@ -1,0 +1,160 @@
+{
+  "customer_id": "SYNID0107888998",
+  "score": 0.046214145,
+  "reasons": [
+    {
+      "feature": "channel_entropy",
+      "value": 0.6931471805599453,
+      "impact": -1.0074443817138672,
+      "signal_ids": [
+        "cash_to_wire_pass_through",
+        "white_label_atm_usage",
+        "armored_car_cash_volume"
+      ],
+      "rules": [
+        {
+          "rule_id": "TX-CASH-11",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "High-volume cash deposits/withdrawals followed immediately by wire transfers or drafts (Pass-through activity).",
+          "typology": "General / Opioids",
+          "source": "[10], [8]",
+          "feasibility": "High",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-14",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Frequent use of white-label ATMs (e.g., in hotels, convenience stores, casinos).",
+          "typology": "Human Trafficking",
+          "source": "[14]",
+          "feasibility": "Medium",
+          "links": [
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-16",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Large volumes of cash delivered via Armored Car Services (ACS) for a business with no apparent lawful purpose.",
+          "typology": "Bulk Cash Smuggling",
+          "source": "[8], [16]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "amt_sum",
+      "value": 433.12,
+      "impact": -0.9018622040748596,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "marital_status_Married",
+      "value": 1.0,
+      "impact": -0.8764871954917908,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "province_Unknown",
+      "value": 1.0,
+      "impact": -0.7237067222595215,
+      "signal_ids": [
+        "drug_corridor_activity"
+      ],
+      "rules": [
+        {
+          "rule_id": "GEO-COR-51",
+          "category": "Geographic/Corridors",
+          "red_flag": "Transactions along known drug corridors (e.g., Vancouver -> Calgary -> Saskatchewan; Toronto -> London/Hamilton).",
+          "typology": "Opioids",
+          "source": "[36]",
+          "feasibility": "High",
+          "links": [
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "bow_stream_emb_v4_072",
+      "value": -0.060404520481824875,
+      "impact": -0.6623867154121399,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "intl_ratio_all",
+      "value": 0.5,
+      "impact": 0.5295001864433289,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_max",
+      "value": 430.83,
+      "impact": -0.44286200404167175,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_064",
+      "value": 0.057504307478666306,
+      "impact": -0.4350886940956116,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_068",
+      "value": 0.027315814048051834,
+      "impact": 0.41144633293151855,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_065",
+      "value": -0.02203829400241375,
+      "impact": -0.4093209505081177,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "uniq_cities",
+      "value": 2.0,
+      "impact": 0.3595970869064331,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "income",
+      "value": 17384.0,
+      "impact": -0.3461857736110687,
+      "signal_ids": [
+        "txn_vs_occupation_peer"
+      ],
+      "rules": [
+        {
+          "rule_id": "KYC-ID-03",
+          "category": "KYC & Identity",
+          "red_flag": "Client occupation (e.g., student, unemployed, homemaker) is inconsistent with transaction volume or wealth.",
+          "typology": "CMLN / Opioids / General",
+          "source": "[2], [3], [4]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf",
+            "https://fintrac-canafe.canada.ca/intel/operation/iso-osi-eng"
+          ]
+        }
+      ]
+    }
+  ]
+}

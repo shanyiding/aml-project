@@ -1,0 +1,130 @@
+{
+  "customer_id": "SYNID0200525992",
+  "score": 0.017726418,
+  "reasons": [
+    {
+      "feature": "bow_stream_emb_v4_091",
+      "value": 0.007776688784360886,
+      "impact": -0.8775066137313843,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_072",
+      "value": -0.10375011712312698,
+      "impact": -0.8389098644256592,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "channel_entropy",
+      "value": 0.8033149761408755,
+      "impact": -0.8232291340827942,
+      "signal_ids": [
+        "cash_to_wire_pass_through",
+        "white_label_atm_usage",
+        "armored_car_cash_volume"
+      ],
+      "rules": [
+        {
+          "rule_id": "TX-CASH-11",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "High-volume cash deposits/withdrawals followed immediately by wire transfers or drafts (Pass-through activity).",
+          "typology": "General / Opioids",
+          "source": "[10], [8]",
+          "feasibility": "High",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-14",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Frequent use of white-label ATMs (e.g., in hotels, convenience stores, casinos).",
+          "typology": "Human Trafficking",
+          "source": "[14]",
+          "feasibility": "Medium",
+          "links": [
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-16",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Large volumes of cash delivered via Armored Car Services (ACS) for a business with no apparent lawful purpose.",
+          "typology": "Bulk Cash Smuggling",
+          "source": "[8], [16]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "intl_last",
+      "value": 0.0,
+      "impact": -0.788063645362854,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_sum",
+      "value": 53250.23,
+      "impact": 0.612582802772522,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_011",
+      "value": 0.06194267049431801,
+      "impact": -0.5548547506332397,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_max",
+      "value": 37357.87,
+      "impact": 0.5545224547386169,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "night_delta",
+      "value": -0.1,
+      "impact": -0.5534803867340088,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "uniq_cities",
+      "value": 13.0,
+      "impact": -0.4370313882827759,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "intl_ratio_all",
+      "value": 0.37777777777777777,
+      "impact": 0.4081900715827942,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_064",
+      "value": -0.047695744782686234,
+      "impact": -0.38680195808410645,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_024",
+      "value": -0.06268883496522903,
+      "impact": -0.36324241757392883,
+      "signal_ids": [],
+      "rules": []
+    }
+  ]
+}

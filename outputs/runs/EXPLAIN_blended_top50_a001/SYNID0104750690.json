@@ -1,0 +1,160 @@
+{
+  "customer_id": "SYNID0104750690",
+  "score": 0.0066302554,
+  "reasons": [
+    {
+      "feature": "bow_stream_emb_v4_091",
+      "value": 0.048879627138376236,
+      "impact": -0.9081897735595703,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "province_Unknown",
+      "value": 1.0,
+      "impact": -0.9051879644393921,
+      "signal_ids": [
+        "drug_corridor_activity"
+      ],
+      "rules": [
+        {
+          "rule_id": "GEO-COR-51",
+          "category": "Geographic/Corridors",
+          "red_flag": "Transactions along known drug corridors (e.g., Vancouver -> Calgary -> Saskatchewan; Toronto -> London/Hamilton).",
+          "typology": "Opioids",
+          "source": "[36]",
+          "feasibility": "High",
+          "links": [
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "amt_sum",
+      "value": 2391.44,
+      "impact": -0.8465110659599304,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "intl_ratio_all",
+      "value": 0.16666666666666666,
+      "impact": -0.788062572479248,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_072",
+      "value": -0.059857312589883804,
+      "impact": -0.6217097640037537,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_max",
+      "value": 1083.35,
+      "impact": -0.5681605339050293,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_064",
+      "value": 0.05843110755085945,
+      "impact": -0.5224311351776123,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "channel_entropy",
+      "value": -0.0,
+      "impact": 0.47077757120132446,
+      "signal_ids": [
+        "cash_to_wire_pass_through",
+        "white_label_atm_usage",
+        "armored_car_cash_volume"
+      ],
+      "rules": [
+        {
+          "rule_id": "TX-CASH-11",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "High-volume cash deposits/withdrawals followed immediately by wire transfers or drafts (Pass-through activity).",
+          "typology": "General / Opioids",
+          "source": "[10], [8]",
+          "feasibility": "High",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-14",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Frequent use of white-label ATMs (e.g., in hotels, convenience stores, casinos).",
+          "typology": "Human Trafficking",
+          "source": "[14]",
+          "feasibility": "Medium",
+          "links": [
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-16",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Large volumes of cash delivered via Armored Car Services (ACS) for a business with no apparent lawful purpose.",
+          "typology": "Bulk Cash Smuggling",
+          "source": "[8], [16]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "income",
+      "value": 52198.0,
+      "impact": -0.4636376202106476,
+      "signal_ids": [
+        "txn_vs_occupation_peer"
+      ],
+      "rules": [
+        {
+          "rule_id": "KYC-ID-03",
+          "category": "KYC & Identity",
+          "red_flag": "Client occupation (e.g., student, unemployed, homemaker) is inconsistent with transaction volume or wealth.",
+          "typology": "CMLN / Opioids / General",
+          "source": "[2], [3], [4]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf",
+            "https://fintrac-canafe.canada.ca/intel/operation/iso-osi-eng"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "uniq_cities",
+      "value": 10.0,
+      "impact": -0.4418434500694275,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_065",
+      "value": -0.022668950259685516,
+      "impact": -0.4383777379989624,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_068",
+      "value": 0.026608310639858246,
+      "impact": 0.3890300393104553,
+      "signal_ids": [],
+      "rules": []
+    }
+  ]
+}

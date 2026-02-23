@@ -1,0 +1,146 @@
+{
+  "customer_id": "SYNID0100417825",
+  "score": 0.006932614,
+  "reasons": [
+    {
+      "feature": "channel_entropy",
+      "value": 0.6769517353038275,
+      "impact": -0.9967207312583923,
+      "signal_ids": [
+        "cash_to_wire_pass_through",
+        "white_label_atm_usage",
+        "armored_car_cash_volume"
+      ],
+      "rules": [
+        {
+          "rule_id": "TX-CASH-11",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "High-volume cash deposits/withdrawals followed immediately by wire transfers or drafts (Pass-through activity).",
+          "typology": "General / Opioids",
+          "source": "[10], [8]",
+          "feasibility": "High",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-14",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Frequent use of white-label ATMs (e.g., in hotels, convenience stores, casinos).",
+          "typology": "Human Trafficking",
+          "source": "[14]",
+          "feasibility": "Medium",
+          "links": [
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-16",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Large volumes of cash delivered via Armored Car Services (ACS) for a business with no apparent lawful purpose.",
+          "typology": "Bulk Cash Smuggling",
+          "source": "[8], [16]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "amt_sum",
+      "value": 20223.63,
+      "impact": -0.9567679762840271,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "intl_last",
+      "value": 0.0,
+      "impact": -0.810131311416626,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "intl_ratio_all",
+      "value": 0.0,
+      "impact": -0.7679997682571411,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "income",
+      "value": 70808.0,
+      "impact": -0.7037310004234314,
+      "signal_ids": [
+        "txn_vs_occupation_peer"
+      ],
+      "rules": [
+        {
+          "rule_id": "KYC-ID-03",
+          "category": "KYC & Identity",
+          "red_flag": "Client occupation (e.g., student, unemployed, homemaker) is inconsistent with transaction volume or wealth.",
+          "typology": "CMLN / Opioids / General",
+          "source": "[2], [3], [4]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf",
+            "https://fintrac-canafe.canada.ca/intel/operation/iso-osi-eng"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "amt_cv_delta",
+      "value": -0.8289828947595652,
+      "impact": -0.6580785512924194,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_074",
+      "value": 0.03079473413527012,
+      "impact": -0.5739906430244446,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_max",
+      "value": 9632.36,
+      "impact": 0.5382708311080933,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "occupation_title_Unknown",
+      "value": 0.0,
+      "impact": -0.46916162967681885,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_065",
+      "value": -0.040805619210004807,
+      "impact": -0.45312047004699707,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_091",
+      "value": 0.05490613356232643,
+      "impact": 0.4273304343223572,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "night_ratio_all",
+      "value": 0.20512820512820512,
+      "impact": -0.420415997505188,
+      "signal_ids": [],
+      "rules": []
+    }
+  ]
+}

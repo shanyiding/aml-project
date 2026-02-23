@@ -1,0 +1,130 @@
+{
+  "customer_id": "SYNID0100464450",
+  "score": 0.018112978,
+  "reasons": [
+    {
+      "feature": "marital_status_Married",
+      "value": 1.0,
+      "impact": -0.9869575500488281,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "intl_ratio_all",
+      "value": 0.0,
+      "impact": -0.9328241348266602,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "intl_last",
+      "value": 0.0,
+      "impact": -0.9218558073043823,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_091",
+      "value": 0.048777200281620026,
+      "impact": -0.873742938041687,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_sum",
+      "value": 78.9,
+      "impact": -0.8204646706581116,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_072",
+      "value": -0.059278447180986404,
+      "impact": -0.793696403503418,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_max",
+      "value": 64.76,
+      "impact": -0.5665345191955566,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_064",
+      "value": 0.057694680988788605,
+      "impact": -0.5224311351776123,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "channel_entropy",
+      "value": -0.0,
+      "impact": 0.4260314106941223,
+      "signal_ids": [
+        "cash_to_wire_pass_through",
+        "white_label_atm_usage",
+        "armored_car_cash_volume"
+      ],
+      "rules": [
+        {
+          "rule_id": "TX-CASH-11",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "High-volume cash deposits/withdrawals followed immediately by wire transfers or drafts (Pass-through activity).",
+          "typology": "General / Opioids",
+          "source": "[10], [8]",
+          "feasibility": "High",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-14",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Frequent use of white-label ATMs (e.g., in hotels, convenience stores, casinos).",
+          "typology": "Human Trafficking",
+          "source": "[14]",
+          "feasibility": "Medium",
+          "links": [
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-16",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Large volumes of cash delivered via Armored Car Services (ACS) for a business with no apparent lawful purpose.",
+          "typology": "Bulk Cash Smuggling",
+          "source": "[8], [16]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "bow_stream_emb_v4_065",
+      "value": -0.022397134453058243,
+      "impact": -0.4164290428161621,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_068",
+      "value": 0.025718113407492638,
+      "impact": 0.4075164794921875,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "uniq_cities",
+      "value": 1.0,
+      "impact": 0.34839046001434326,
+      "signal_ids": [],
+      "rules": []
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "customer_id": "SYNID0103256605",
+  "score": 0.017099548,
+  "reasons": [
+    {
+      "feature": "bow_stream_emb_v4_091",
+      "value": 0.04901733249425888,
+      "impact": -0.8918876051902771,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "marital_status_Married",
+      "value": 1.0,
+      "impact": -0.8764871954917908,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_sum",
+      "value": 189.83,
+      "impact": -0.8317506909370422,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_072",
+      "value": -0.06475888937711716,
+      "impact": -0.7879085540771484,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "province_Unknown",
+      "value": 1.0,
+      "impact": -0.7237067222595215,
+      "signal_ids": [
+        "drug_corridor_activity"
+      ],
+      "rules": [
+        {
+          "rule_id": "GEO-COR-51",
+          "category": "Geographic/Corridors",
+          "red_flag": "Transactions along known drug corridors (e.g., Vancouver -> Calgary -> Saskatchewan; Toronto -> London/Hamilton).",
+          "typology": "Opioids",
+          "source": "[36]",
+          "feasibility": "High",
+          "links": [
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "intl_ratio_all",
+      "value": 0.5,
+      "impact": 0.5456294417381287,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_064",
+      "value": 0.05847291648387909,
+      "impact": -0.5338915586471558,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_max",
+      "value": 74.06,
+      "impact": -0.5242885947227478,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "channel_entropy",
+      "value": -0.0,
+      "impact": 0.47586846351623535,
+      "signal_ids": [
+        "cash_to_wire_pass_through",
+        "white_label_atm_usage",
+        "armored_car_cash_volume"
+      ],
+      "rules": [
+        {
+          "rule_id": "TX-CASH-11",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "High-volume cash deposits/withdrawals followed immediately by wire transfers or drafts (Pass-through activity).",
+          "typology": "General / Opioids",
+          "source": "[10], [8]",
+          "feasibility": "High",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-14",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Frequent use of white-label ATMs (e.g., in hotels, convenience stores, casinos).",
+          "typology": "Human Trafficking",
+          "source": "[14]",
+          "feasibility": "Medium",
+          "links": [
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-16",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Large volumes of cash delivered via Armored Car Services (ACS) for a business with no apparent lawful purpose.",
+          "typology": "Bulk Cash Smuggling",
+          "source": "[8], [16]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "uniq_cities",
+      "value": 3.0,
+      "impact": -0.4418434500694275,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_065",
+      "value": -0.024886304512619972,
+      "impact": -0.4164290428161621,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_068",
+      "value": 0.027191046625375748,
+      "impact": 0.3929598331451416,
+      "signal_ids": [],
+      "rules": []
+    }
+  ]
+}

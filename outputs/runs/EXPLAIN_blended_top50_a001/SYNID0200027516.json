@@ -1,0 +1,158 @@
+{
+  "customer_id": "SYNID0200027516",
+  "score": 0.009549905,
+  "reasons": [
+    {
+      "feature": "channel_entropy",
+      "value": 1.2422550455140853,
+      "impact": -1.464015007019043,
+      "signal_ids": [
+        "cash_to_wire_pass_through",
+        "white_label_atm_usage",
+        "armored_car_cash_volume"
+      ],
+      "rules": [
+        {
+          "rule_id": "TX-CASH-11",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "High-volume cash deposits/withdrawals followed immediately by wire transfers or drafts (Pass-through activity).",
+          "typology": "General / Opioids",
+          "source": "[10], [8]",
+          "feasibility": "High",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-14",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Frequent use of white-label ATMs (e.g., in hotels, convenience stores, casinos).",
+          "typology": "Human Trafficking",
+          "source": "[14]",
+          "feasibility": "Medium",
+          "links": [
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        },
+        {
+          "rule_id": "TX-CASH-16",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Large volumes of cash delivered via Armored Car Services (ACS) for a business with no apparent lawful purpose.",
+          "typology": "Bulk Cash Smuggling",
+          "source": "[8], [16]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "intl_last",
+      "value": 0.0,
+      "impact": -0.7778584361076355,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_cv_delta",
+      "value": -1.5091500191099319,
+      "impact": -0.7640808820724487,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "intl_ratio_all",
+      "value": 0.23529411764705882,
+      "impact": -0.7351369857788086,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "amt_max",
+      "value": 30272.91,
+      "impact": 0.6146077513694763,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_091",
+      "value": 0.054495248943567276,
+      "impact": -0.5054415464401245,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "uniq_cities",
+      "value": 5.0,
+      "impact": -0.45008718967437744,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "night_ratio_all",
+      "value": 0.15384615384615385,
+      "impact": -0.42074036598205566,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_024",
+      "value": -0.06423748284578323,
+      "impact": -0.38368329405784607,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "bow_stream_emb_v4_068",
+      "value": 0.017100319266319275,
+      "impact": -0.35573750734329224,
+      "signal_ids": [],
+      "rules": []
+    },
+    {
+      "feature": "occupation_code_STUDENT",
+      "value": 0.0,
+      "impact": -0.34233763813972473,
+      "signal_ids": [
+        "logistics_worker_cash_volume",
+        "txn_vs_occupation_peer"
+      ],
+      "rules": [
+        {
+          "rule_id": "TX-CASH-15",
+          "category": "Transactions: Cash & ABM",
+          "red_flag": "Trucking/Logistics employees making excessive cash deposits, particularly along known drug corridors.",
+          "typology": "Opioids",
+          "source": "[15]",
+          "feasibility": "Medium",
+          "links": [
+            "https://www.fincen.gov/system/files/shared/BCS-Alert-FINAL-508C.pdf"
+          ]
+        },
+        {
+          "rule_id": "KYC-ID-03",
+          "category": "KYC & Identity",
+          "red_flag": "Client occupation (e.g., student, unemployed, homemaker) is inconsistent with transaction volume or wealth.",
+          "typology": "CMLN / Opioids / General",
+          "source": "[2], [3], [4]",
+          "feasibility": "Medium",
+          "links": [
+            "https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/indicators-indicateurs/fin_mltf-eng",
+            "https://www.fincen.gov/system/files/2025-08/FinCEN-Advisory-CMLN-508.pdf",
+            "https://fintrac-canafe.canada.ca/intel/operation/iso-osi-eng"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "amt_cv_last",
+      "value": 1.3886947961894793,
+      "impact": -0.3309893012046814,
+      "signal_ids": [],
+      "rules": []
+    }
+  ]
+}
